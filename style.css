@@ -62,3 +62,8 @@ button {
 .operation {
   background-color: darkgrey;
 }
+
+.dummy {
+  background-color: cadetblue;
+  border: 0px;
+}
