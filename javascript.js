@@ -74,40 +74,19 @@ const opButtons = document.querySelectorAll(".operation");
 opButtons.forEach((opButton) => opButton.addEventListener("click", displayOp));
 
 function displayOp(e) {
-  if (runningDisplay.textContent != "") {
-    let text = e.target.innerText;
-    if (tempVariableX === "") {
-      tempVariableX = runningDisplay.textContent;
-    } else {
-      tempVariableY = runningDisplay.textContent;
-    } //last numbers are y
-    run(runningDisplay.textContent); //evaluate
-    summingDisplay.textContent += text; //move y up add op
-    runningDisplay.textContent = ""; //clear bottom
-    tempOp = text;
-    console.log(tempVariableX);
-    console.log(tempVariableY);
-    console.log(tempOp);
-  }
-
-  // if (tempOp === "=") {
-  //   runningDisplay.textContent = result;
-  // }
-
-  // tempVariableX = runningDisplay.textContent; //results become new x
-
-  // if (operators.includes(lastChar(summingDisplay.textContent)) === false) {
-  //   tempVariableX = runningDisplay.textContent; //last numbers are x
-  //   runningDisplay.textContent = ""; //clear bottom
-  //   summingDisplay.textContent = tempVariableX + text; //move x up add op
-  //   tempOp = text; //for evaluation
-  // }
-  // tempVariableY = runningDisplay.textContent;
-  // summingDisplay.textContent += tempVariableY;
-  // runningDisplay.textContent = "";
-  // run(runningDisplay.textContent);
-  // summingDisplay.textContent = runningDisplay.textContent + text;
-  // }
+  let text = e.target.innerText;
+  if (tempVariableX === "") {
+    tempVariableX = runningDisplay.textContent;
+  } else {
+    tempVariableY = runningDisplay.textContent;
+  } //last numbers are y
+  run(runningDisplay.textContent); //evaluate
+  summingDisplay.textContent = tempVariableX + text; //move y up add op
+  runningDisplay.textContent = ""; //clear bottom
+  tempOp = text;
+  console.log(tempVariableX);
+  console.log(tempVariableY);
+  console.log(tempOp);
 }
 
 //When to calculate
